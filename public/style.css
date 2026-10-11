@@ -1,0 +1,143 @@
+:root {
+  --red: #b71c1c;
+  --red-dark: #7f1010;
+  --red-soft: #fdecea;
+  --line: #ecd5d3;
+  --ink: #2a1614;
+  --page: #faf4f3;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: "Leelawadee UI", "Segoe UI", Tahoma, sans-serif;
+  margin: 0;
+  background: var(--page);
+  color: var(--ink);
+  line-height: 1.5;
+}
+
+/* ---------- ส่วนหัว ---------- */
+header {
+  background: linear-gradient(135deg, var(--red-dark), var(--red));
+  color: #fff;
+  padding: 1.75rem 1rem;
+}
+header h1 {
+  max-width: 860px;
+  margin: 0 auto;
+  font-size: 1.7rem;
+}
+
+main {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 1.25rem 1rem 3rem;
+}
+
+/* ---------- ข้อความแจ้งผล ---------- */
+#message {
+  margin: 0 0 1rem;
+  padding: 0.7rem 1rem;
+  border-radius: 8px;
+  border-left: 5px solid;
+  font-weight: 600;
+}
+#message:empty { display: none; }
+.success { background: #e7f5ec; border-color: #1e7d45; color: #145a31; }
+.error { background: var(--red-soft); border-color: var(--red); color: var(--red-dark); }
+
+/* ---------- กล่องเนื้อหา ---------- */
+.forms {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  align-items: start;
+}
+section {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-top: 4px solid var(--red);
+  border-radius: 10px;
+  padding: 1.1rem 1.25rem 1.25rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 6px rgba(127, 16, 16, 0.06);
+}
+h2 {
+  margin: 0 0 0.8rem;
+  font-size: 1.15rem;
+  color: var(--red-dark);
+}
+
+/* ---------- ฟอร์ม ---------- */
+form { display: grid; gap: 0.6rem; }
+input {
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid #d9bfbc;
+  border-radius: 7px;
+  font: inherit;
+  background: #fff;
+  color: var(--ink);
+}
+input::placeholder { color: #a48f8c; }
+input:focus {
+  outline: none;
+  border-color: var(--red);
+  box-shadow: 0 0 0 3px rgba(183, 28, 28, 0.18);
+}
+
+/* ---------- ปุ่ม ---------- */
+button {
+  font: inherit;
+  font-weight: 600;
+  border: 0;
+  border-radius: 7px;
+  padding: 0.65rem 1rem;
+  background: var(--red);
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+button:hover { background: var(--red-dark); }
+button:focus-visible {
+  outline: 3px solid rgba(183, 28, 28, 0.4);
+  outline-offset: 2px;
+}
+
+/* ---------- ตารางสมาชิก ---------- */
+#search-box { margin-bottom: 0.8rem; }
+.table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+th, td {
+  padding: 0.6rem 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid var(--line);
+}
+th {
+  background: var(--red);
+  color: #fff;
+  font-weight: 600;
+  white-space: nowrap;
+}
+tbody tr:nth-child(even) { background: #fdf7f6; }
+tbody tr:hover { background: var(--red-soft); }
+tbody tr:last-child td { border-bottom: 0; }
+
+/* ปุ่มลบในตาราง */
+td button {
+  padding: 0.3rem 0.8rem;
+  font-size: 0.85rem;
+  background: #fff;
+  color: var(--red);
+  border: 1px solid var(--red);
+}
+td button:hover { background: var(--red); color: #fff; }
